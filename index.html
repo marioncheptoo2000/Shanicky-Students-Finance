@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Finance</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2f5bea">
+  <link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+  <header>
+    <h1>Student Finance</h1>
+    <p>Plan your month and spend wisely.</p>
+  </header>
+
+  <section class="summary">
+    <p>You can spend today</p>
+    <h2 id="daily-limit">0</h2>
+    <p id="summary-text">Enter your income to start.</p>
+  </section>
+
+  <section class="card">
+    <h3>Your income this month</h3>
+    <label for="income">Amount</label>
+    <input id="income" type="number" placeholder="e.g. 15000">
+
+    <label for="savings">Save first (% of income)</label>
+    <input id="savings" type="number" value="10">
+  </section>
+
+  <section class="card">
+    <h3>Add an expense</h3>
+    <label for="amount">Amount</label>
+    <input id="amount" type="number" placeholder="0">
+
+    <label for="category">Category</label>
+    <select id="category">
+      <option>Food</option>
+      <option>Rent / hostel</option>
+      <option>Transport</option>
+      <option>Books and fees</option>
+      <option>Airtime and data</option>
+      <option>Fun and outings</option>
+      <option>Other</option>
+    </select>
+
+    <label for="note">Note (optional)</label>
+    <input id="note" type="text" placeholder="e.g. lunch">
+
+    <button id="add-btn">Add expense</button>
+  </section>
+
+  <section class="card">
+    <h3>Your expenses</h3>
+    <ul id="expense-list">
+      <li>No expenses yet.</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>
